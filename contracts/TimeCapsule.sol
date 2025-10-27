@@ -102,6 +102,10 @@ contract TimeCapsule is SepoliaConfig {
         
         if (!capsule.isUnlocked) {
             capsule.isUnlocked = true;
+            
+            // 授权用户解密权限（关键修复！）
+            FHE.allow(capsule.encryptedAesKey, msg.sender);
+            
             emit CapsuleUnlocked(capsuleId, msg.sender);
         }
         

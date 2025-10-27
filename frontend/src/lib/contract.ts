@@ -1,6 +1,6 @@
 // Contract configuration - TimeCapsule deployed on Sepolia
 // 🆕 Updated contract with AES hybrid encryption support
-export const CONTRACT_ADDRESS = '0xb84327c35ba9E3321F779448A0723EAe3de9f81c' as `0x${string}`
+export const CONTRACT_ADDRESS = '0x935596213b7c0EA493959353d032651ff21A7D3F' as `0x${string}`
 
 export const CONTRACT_ABI = [
   // Events
@@ -53,8 +53,8 @@ export const CONTRACT_ABI = [
       { name: 'owner', type: 'address' },
       { name: 'unlockTime', type: 'uint256' },
       { name: 'createdAt', type: 'uint256' },
-      { name: 'isUnlocked', type: 'bool' },
       { name: 'title', type: 'string' },
+      { name: 'isUnlocked', type: 'bool' },
     ],
   },
   {
@@ -62,13 +62,6 @@ export const CONTRACT_ABI = [
     name: 'getUserCapsules',
     stateMutability: 'view',
     inputs: [{ name: 'user', type: 'address' }],
-    outputs: [{ name: '', type: 'uint256[]' }],
-  },
-  {
-    type: 'function',
-    name: 'getMyCapsules',
-    stateMutability: 'view',
-    inputs: [],
     outputs: [{ name: '', type: 'uint256[]' }],
   },
   {

@@ -13,12 +13,12 @@ export function useTimeCapsule() {
     functionName: 'getTotalCapsules',
   })
 
-  // Read user capsules using getMyCapsules
+  // Read user capsules using getUserCapsules
   const { data: userCapsuleIds, refetch: refetchUserCapsules, error: capsuleIdsError } = useReadContract({
     address: CONTRACT_ADDRESS,
     abi: CONTRACT_ABI,
-    functionName: 'getMyCapsules',
-    account: address,
+    functionName: 'getUserCapsules',
+    args: address ? [address] : undefined,
     query: {
       enabled: !!address, // Only run query when address is available
     },
@@ -158,7 +158,7 @@ export function useCapsuleInfo(capsuleId: bigint | undefined) {
 
   if (!data || !capsuleId) return null
 
-  const [owner, unlockTime, createdAt, isUnlocked, title] = data as [string, bigint, bigint, boolean, string]
+  const [owner, unlockTime, createdAt, title, isUnlocked] = data as [string, bigint, bigint, string, boolean]
 
   return {
     id: capsuleId,
