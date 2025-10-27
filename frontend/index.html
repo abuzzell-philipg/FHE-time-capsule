@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/capsule-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TimeCapsule - Preserve Time, Unlock the Future</title>
+    <meta name="description" content="Create time capsules using FHE encryption technology to securely preserve your secrets and unlock them at specific moments in the future." />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Zama FHE SDK (UMD) -->
+    <script
+      src="https://cdn.zama.ai/relayer-sdk-js/0.2.0/relayer-sdk-js.umd.cjs"
+      type="text/javascript"
+      onload="console.log('✅ FHE SDK script loaded', Object.keys(window).filter(k => k.toLowerCase().includes('sdk') || k.toLowerCase().includes('zama')))"
+      onerror="console.error('❌ Failed to load FHE SDK script from CDN')"
+    ></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
