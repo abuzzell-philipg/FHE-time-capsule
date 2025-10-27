@@ -33,7 +33,14 @@ export default function Dashboard() {
 
     if (!capsuleData) return null
 
-    const [owner, unlockTime, createdAt, isUnlocked, title] = capsuleData as [string, bigint, bigint, boolean, string]
+    // 修复：正确的解构顺序，匹配合约返回值 [owner, unlockTime, createdAt, title, isUnlocked]
+    const [owner, unlockTime, createdAt, title, isUnlocked] = capsuleData as readonly [
+      `0x${string}`,
+      bigint,
+      bigint,
+      string,
+      boolean
+    ]
     
     const capsule: Capsule = {
       id: capsuleId,
