@@ -46,19 +46,19 @@ export function formatFileSize(bytes: number): string {
   return Math.round((bytes / Math.pow(k, i)) * 100) / 100 + ' ' + sizes[i]
 }
 
-export function validateUnlockTime(unlockTime: Date): { valid: boolean; error?: string } {
+ export function validateUnlockTime(unlockTime: Date): { valid: boolean; error?: string } {
   const now = new Date()
-  const minTime = new Date(now.getTime() + 60 * 1000) // 1 minute from now
+  const minTime = new Date(now.getTime() + 60 * 60 * 1000) // 1 hour from now
   const maxTime = new Date(now.getTime() + 3 * 365 * 24 * 60 * 60 * 1000) // 3 years from now
-  
+
   if (unlockTime < minTime) {
-    return { valid: false, error: 'Unlock time must be at least 1 minute from now' }
+    return { valid: false, error: 'Unlock time must be at least 1 hour from now' }
   }
-  
+
   if (unlockTime > maxTime) {
     return { valid: false, error: 'Unlock time cannot exceed 3 years' }
   }
-  
+
   return { valid: true }
 }
 
