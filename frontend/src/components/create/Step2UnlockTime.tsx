@@ -8,8 +8,7 @@ interface Step2UnlockTimeProps {
   onBack: () => void
 }
 
-const quickTimes = [
-  { label: '1 minute', emoji: '⚡', value: () => addMinutes(new Date(), 1) },
+const quickTimes = [  
   { label: '1 hour', emoji: '☕', value: () => addHours(new Date(), 1) },
   { label: '1 day', emoji: '🌙', value: () => addDays(new Date(), 1) },
   { label: '7 days', emoji: '📅', value: () => addDays(new Date(), 7) },
@@ -146,7 +145,7 @@ export default function Step2UnlockTime({ onNext, onBack }: Step2UnlockTimeProps
           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
           </svg>
-          <span>Min 1 minute, Max 3 years</span>
+         <span>Min 1 hour, Max 3 years</span>
         </div>
       </div>
       
